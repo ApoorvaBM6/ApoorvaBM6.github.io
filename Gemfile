@@ -1,11 +1,4 @@
-# frozen_string_literal: true
-
 source "https://rubygems.org"
 
-# gem "rails"
-
-gem "jekyll"
-
-group :jekyll_plugins do
-  gem "jekyll-scholar"
-end
+gem "jekyll", "~> 4.4.1"
+gem "jekyll-scholar"

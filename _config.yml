@@ -16,7 +16,7 @@ sass:
   style: :nested
 
 # Add bibliography
-gems: ['jekyll/scholar']
+plugins: ['jekyll/scholar']
 
 # Currently the markdown files are added in folder at the 
 # root directory to avoid the issues due to include and include_relative, in the future, try to make them as collections.
