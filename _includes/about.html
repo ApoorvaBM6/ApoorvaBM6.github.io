@@ -1,0 +1,80 @@
+<section id="about">
+
+  <div class="about-lockup">
+    <div class="about-txt">
+      <h2>About Me</h2>
+      <div class="blurb">
+        {{ about.content | markdownify }}
+      </div>
+
+      <div class="documents">
+        <!-- CV -->
+        <div class="document-group">
+          <span class="document-type">
+            CV
+          </span>
+
+          <div class="document-buttons">
+            <a href="assets/files/Apoorva_Busunur_Mallikarjuna_CV_en.pdf"
+              class="document-button"
+              target="_blank"
+              rel="noopener noreferrer">
+              {% include icons/document.html language="EN" %}
+            </a>
+
+            <a href="assets/files/Apoorva_Busunur_Mallikarjuna_CV_fr.pdf"
+              class="document-button"
+              target="_blank"
+              rel="noopener noreferrer">
+              {% include icons/document.html language="FR" %}
+            </a>
+          </div>
+        </div>
+
+        <!-- Resume -->
+        <div class="document-group">
+          <span class="document-type">
+            Resume
+          </span>
+
+          <div class="document-buttons">
+            <a href="/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_en.pdf"
+              class="document-button"
+              target="_blank"
+              rel="noopener noreferrer">
+              {% include icons/document.html language="EN" %}
+            </a>
+
+            <a href="/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_fr.pdf"
+              class="document-button"
+              target="_blank"
+              rel="noopener noreferrer">
+              {% include icons/document.html language="FR" %}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-right">
+      <div class="face"></div>
+      <div class="social-links">
+        <a href="https://github.com/ApoorvaBM6"
+          target="_blank"
+          rel="noopener noreferrer">
+          {% include icons/github.html %}
+        </a>
+
+        <a href="https://linkedin.com/in/apoorva-bm"
+          target="_blank"
+          rel="noopener noreferrer">
+          {% include icons/linkedin.html %}
+        </a>
+
+        <a href="mailto:bmapoorva.nr@gmail.com">
+          {% include icons/email.html %}
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

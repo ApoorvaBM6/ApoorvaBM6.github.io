@@ -1,0 +1,58 @@
+# Site settings
+title: Apoorva Busunur Mallikarjuna
+url: https://apoorvabm6.github.io
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+favicon: "/assets/img/cockpit_experiment.jpg"
+
+port: 3000
+url: http://localhost:3000
+
+sass:
+  sass_dir: assets/css
+  style: :nested
+
+# Add bibliography
+gems: ['jekyll/scholar']
+
+# Currently the markdown files are added in folder at the 
+# root directory to avoid the issues due to include and include_relative, in the future, try to make them as collections.
+collections:
+  content:
+    output: false
+
+  projects:
+    output: false
+    sort_by: date
+
+scholar:
+  style: assets/bib/_ieee-with-url.csl
+  locale: en
+
+  sort_by: none
+  order: ascending
+
+  group_by: none
+  group_order: ascending
+
+  source: assets/bib
+  bibliography: _mybib.bib
+  bibliography_template: "{{reference}}"
+
+  replace_strings: true
+  join_strings:    true
+
+  # use_raw_bibtex_entry: false ; remove this as it is not a valid option in the latest version of jekyll-scholar
+  bibtex_filters:
+  - superscript
+  - latex
+  - HTML
+
+  details_dir:    bibliography
+  details_layout: bibtex.html
+  details_link:   Details
+
+  query: "@*"

@@ -1,0 +1,122 @@
+#engagement
+  max-width: 960px
+  margin: 0 auto
+  padding: 50px 20px
+
+  // Main section title
+  > h2
+    margin-bottom: 45px
+
+    color: $primary-color
+    font-weight: 600
+
+
+  // Subsection headings
+  > h3
+    margin: 35px 0 20px
+    padding-bottom: 8px
+
+    color: $primary-color
+    font-weight: 600
+
+    border-bottom: 2px solid $primary-color
+
+
+  // Main list
+  > ul
+    margin: 0 0 30px
+    padding: 0
+
+    list-style: none
+
+
+  // Each conference / hackathon
+  > ul > li
+    position: relative
+
+    margin-bottom: 25px
+    padding: 18px 25px
+
+    border-left: 3px solid $primary-color
+
+    background: rgba(0, 0, 0, 0.025)
+
+    line-height: 1.6
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+
+    &:hover
+      transform: translateX(3px)
+
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08)
+
+
+  // Event title
+  > ul > li > strong
+    display: block
+
+    margin-bottom: 5px
+
+    color: $primary-color
+
+    font-size: 16px
+    font-weight: 600
+
+
+  // Nested role / description list
+  > ul > li > ul
+    margin: 8px 0 0
+    padding-left: 20px
+
+    list-style: none
+
+
+  // Nested list items
+  > ul > li > ul > li
+    position: relative
+
+    margin-bottom: 5px
+
+    color: #555
+
+    font-size: 14px
+    line-height: 1.6
+
+
+  // Small accent bullet
+  > ul > li > ul > li::before
+    content: "•"
+
+    position: absolute
+    left: -15px
+
+    color: $primary-color
+    font-weight: bold
+
+
+  // Bold text inside descriptions
+  strong
+    color: $primary-color
+    font-weight: 600
+
+
+  // Responsive
+  @media screen and (max-width: 650px)
+
+    padding: 35px 15px
+
+    > h2
+      font-size: 24px
+      margin-bottom: 35px
+
+    > h3
+      font-size: 18px
+
+    > ul > li
+      padding: 15px 18px
+
+    > ul > li > strong
+      font-size: 15px
+
+    > ul > li > ul > li
+      font-size: 13px

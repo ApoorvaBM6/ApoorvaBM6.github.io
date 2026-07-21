@@ -1,0 +1,30 @@
+header
+  height: 200px
+  max-width: 960px
+  background: url(../img/cockpit_experiment.jpg) center center
+  background-size: cover
+  margin: 0 auto
+  float: none
+
+  nav
+    float: right
+    margin: 30px 20px 0px 0px
+    a
+      display: inline-block
+      margin-left: 20px
+
+      @extend %small-bold
+
+      &:hover
+        color: $hover-color
+
+  h1
+    float: left
+    margin: 20px 0px 0px 20px
+    font:
+      size: 32px
+      weight: 700
+    color: $primary-color
+    text-transform: uppercase
+    &:hover
+      color: $hover-color

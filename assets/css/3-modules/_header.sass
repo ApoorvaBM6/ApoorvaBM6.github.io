@@ -1,0 +1,67 @@
+header
+  width: 100%
+
+.hero
+  height: 150px
+  background-image: url("/assets/img/cockpit_experiment.jpg")
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+  position: relative
+
+  &::before
+    content: ""
+    position: absolute
+
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+
+    background: rgba(0, 0, 0, 0.35)
+
+.hero-overlay
+  position: relative
+  z-index: 2
+
+  color: $alttext-color
+  text-align: center
+
+  h1
+    font-size: 3rem
+    margin-bottom: 10px
+    color: $alttext-color
+
+  p
+    font-size: 1.25rem
+    letter-spacing: 1px
+    color: $alttext-color
+
+.navbar
+  position: sticky
+  top: 0
+  z-index: 999
+  height: 60px
+  background: $primary-color
+
+  display: flex
+  justify-content: center
+  align-items: center
+  gap: 40px
+
+  a
+    color: $alttext-color
+    text-decoration: none
+    font-weight: 600
+    transition: color 0.3s ease
+
+    &:hover
+      color: $hover-color
+
+html
+  scroll-behavior: smooth

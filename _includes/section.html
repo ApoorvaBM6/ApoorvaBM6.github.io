@@ -1,0 +1,10 @@
+<section id="{{ include.id }}" class="content-section">
+
+    <div class="markdown-content">
+        {{ include.content | markdownify }}
+        
+        <!-- For debugging: Note if the content is loaded on the website: Not loaded(renders 0), loaded(renders 5){{ site.content | size }} --> 
+
+    </div>
+
+</section>
