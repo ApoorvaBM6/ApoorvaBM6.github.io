@@ -5,7 +5,6 @@ source "https://rubygems.org"
 # gem "rails"
 
 gem "jekyll"
-gem "jekyll-scholar"
 
 group :jekyll_plugins do
   gem "jekyll-scholar"
