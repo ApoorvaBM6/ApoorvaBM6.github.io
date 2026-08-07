@@ -30,7 +30,7 @@ Assisted in collecting and analyzing **8-electrode EEG data** to validate predic
 *Bangalore, India*  
 **Oct 2020 – Aug 2023**
 
-Worked on **40+ enterprise printer products**, developing UI and firmware features with a focus on reliability and usability. Promoted to **Engineer II** in 2023. Responsibilities included feature development, system triage, and resolving customer escalations during new product deployments.
+Worked on **40+ enterprise printer products**, developing UI and firmware features with a focus on reliability and usability. Promoted to **Engineer II** in June 2023. Responsibilities included feature development, system triage, and resolving customer escalations during new product deployments.
 
 **Skills:** JavaScript · C# · C · CSS · Git · Agile · JIRA · Requirement Analysis
 

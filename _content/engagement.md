@@ -12,12 +12,12 @@ title : Scientific Engagement and Hackathons
     *   Focused on cognition, human performance, and adaptation in extreme environments.
 *   **IMAV 2024 – International Micro Air Vehicle Conference** (Bristol, UK)
     *   Role: Research Presenter.
-    *   Presented work on vision-based navigation for MAVs in GNSS-denied environments and associated autonomy challenges.
+    *   Presented a colleague's work "On the Lateral Non-Stabilizability of PID Controllers for
+Vision-Based Line-Following Multicopters through Roll
+Angle Setpoints"
 *   **ICCAS 2024 – International Conference on Aeronautical Cognitive Systems** (ISAE-SUPAERO, Toulouse)
     *   Role: Participant.
-*   **UCSP 2019-2020 – Ubiquitous Computing and Signal Processing** (NIE, Mysuru)
-    *   Role: Team Leader/Student Chairperson.
-    *   Led a student research initiative to promote innovation through technical projects, scientific writing, workshops, and electronics/communication conferences.
+
 
 ### Hackathons & Competitions
 *   **BR41N.IO Brain-Computer Interface Designer’s Hackathon 2026**
@@ -29,6 +29,9 @@ title : Scientific Engagement and Hackathons
 
 ### Leadership & Representation
 *   **Embedded Systems Cohort, ISAE-SUPAERO** (2024–2025): Student Representative.
+*   **UCSP 2019-2020 – Ubiquitous Computing and Signal Processing** (NIE, Mysuru)
+    *   Role: Student Chairperson.
+    *   Led a student research initiative under the Department of Electronics and Communication,    The National Institute of Engineering, Mysuru, to promote innovation through technical projects, workshops, and internships.
 *   **ECE Association, NIE Mysuru** (2017): Student Representative.
 
 ------
