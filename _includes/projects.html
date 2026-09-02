@@ -1,20 +1,160 @@
 <section id="projects" class="portfolio-section">
     <h2>Technical Projects</h2>
 
-    {% for project in site.projects %}
-    <article class="project-card">
+    <div class="project-filters">
+
+        <button class="project-filter active" data-filter="all">
+            All
+        </button>
+
+        <button class="project-filter" data-filter="Human-Centred">
+            Human-Centred
+        </button>
+
+        <button class="project-filter" data-filter="Embedded Systems">
+            Embedded Systems
+        </button>
+
+        <button class="project-filter" data-filter="Extreme Environment">
+            Extreme Environment
+        </button>
+
+    </div>
+
+    {% assign ordered_projects = site.projects | sort: "order" | reverse %}
+
+    {% for project in ordered_projects %}
+    <article class="project-preview" tabindex="0" data-category="{{ project.category | join: '|' }}">
+
         <h3>{{ project.title }}</h3>
-        <span class="date">{{ project.period }}</span>
 
-        {{ project.content }}
+        <div class="project-meta">
+            <span class="date">{{ project.period }}</span>
 
-        {% if project.skills %}
-        <div class="skills-tags">
-            {% for skill in project.skills %}
-            <span>{{ skill }}</span>
-            {% endfor %}
+            {% if project.university %}
+            <a href="{{ project.university_url }}"
+            class="university"
+            target="_blank"
+            rel="noopener noreferrer">
+                {{ project.university }}
+            </a>
+            {% endif %}
+
+            {% if project.tag %}
+            <span class="project-tag">{{ project.tag }}</span>
+            {% endif %}
         </div>
-        {% endif %}
+
+        <div class="project-details">
+            {{ project.content }}
+
+            {% if project.skills %}
+            <div class="skills-tags">
+                {% for skill in project.skills %}
+                <span>{{ skill }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if project.contributors %}
+            <div class="project-contributors">
+                <span class="contributors-label">Other Contributors:</span>
+
+                <div class="contributors-list">
+                    {% for contributor in project.contributors %}
+                    <a href="{{ contributor.linkedin }}"
+                    class="contributor"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        <span class="contributor-name">{{ contributor.name }}</span>
+                        <span class="linkedin-icon" aria-label="LinkedIn">in</span>
+                    </a>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            <!-- Project Resources -->
+            {% if project.report or project.presentation or project.github or project.video or project.images or project.links %}
+            <div class="project-resources">
+
+                {% if project.report %}
+                <a href="{{ project.report | relative_url }}"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Project Report
+                </a>
+                {% endif %}
+
+                {% if project.presentation %}
+                <a href="{{ project.presentation | relative_url }}"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Presentation
+                </a>
+                {% endif %}
+
+                {% if project.github %}
+                <a href="{{ project.github }}"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    GitHub
+                </a>
+                {% endif %}
+
+                {% if project.video %}
+                <a href="{{ project.video }}"
+                class="project-link"
+                target="_blank"
+                rel="noopener noreferrer">
+                    Video
+                </a>
+                {% endif %}
+
+                {% if project.links %}
+                    {% for link in project.links %}
+                    <a href="{{ link.url }}"
+                    class="project-link"
+                    target="_blank"
+                    rel="noopener noreferrer">
+                        {{ link.title }}
+                    </a>
+                    {% endfor %}
+                {% endif %}
+
+            </div>
+            {% endif %}
+
+            <!-- Project Images -->
+            {% if project.images %}
+            <div class="project-images">
+                {% for image in project.images %}
+                <img src="{{ image | relative_url }}"
+                    alt="{{ project.title }}"
+                    loading="lazy">
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <!-- Project Video Embed -->
+            {% if project.video_embed %}
+            <div class="project-video">
+                <div class="video-container">
+                    <iframe
+                        src="{{ project.video_embed }}"
+                        title="{{ project.title }} video"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        
     </article>
     {% endfor %}
 </section>
