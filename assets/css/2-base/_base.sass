@@ -90,3 +90,42 @@ body
   -webkit-font-smoothing: antialiased
   -webkit-text-size-adjust: 100%
 
+*
+  box-sizing: border-box
+
+img,
+iframe,
+video
+  max-width: 100%
+  height: auto
+
+section
+  width: 100%
+  overflow-wrap: break-word
+
+.content-section
+  max-width: 960px
+  margin: 0 auto
+  padding: 50px 20px
+
+  .markdown-content
+    h2
+      margin-bottom: 30px
+      color: $primary-color
+
+    ul,
+    ol
+      padding-left: 25px
+
+@media screen and (max-width: 650px)
+  .content-section
+    padding: 35px 15px
+
+  h1
+    font-size: 32px
+
+  h2
+    font-size: 26px
+
+  h3
+    font-size: 21px

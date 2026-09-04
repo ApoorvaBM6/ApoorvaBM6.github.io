@@ -173,13 +173,34 @@ section
     max-width: 250px
     text-align: center
 
+  .documents
+    gap: 16px
+
+  .document-group
+    flex-wrap: wrap
+    gap: 10px 20px
+
+  .document-type
+    min-width: 70px
+
+  .document-buttons
+    gap: 10px
+
+  .document-button
+    width: 38px
+    height: 38px
+
+    svg
+      width: 38px
+      height: 38px
+
   .about-right
     width: 100%
     margin-top: 40px
 
   .about-right .face
-    width: 200px
-    height: 220px
+    width: 180px
+    height: 180px
     margin: 0 auto
 
   .about-right .social-links
@@ -187,19 +208,3 @@ section
     align-items: center
     justify-content: center
     gap: 18px
-
-    width: 40px
-    height: 40px
-
-    color: $accent-color
-    text-decoration: none
-
-    svg
-      width: 28px
-      height: 28px
-
-    transition: color 0.3s ease
-
-
-  .about-right .social-links a:hover
-    color: $hover-color

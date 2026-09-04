@@ -63,5 +63,34 @@ header
     &:hover
       color: $hover-color
 
+@media screen and (max-width: 650px)
+  .hero
+    min-height: 180px
+    height: auto
+    padding: 35px 15px
+
+  .hero-overlay
+    width: 100%
+
+    h1
+      margin: 0 0 10px
+      font-size: clamp(1.8rem, 8vw, 2.4rem)
+      line-height: 1.15
+
+    p
+      margin-bottom: 0
+      font-size: 0.95rem
+      line-height: 1.5
+
+  .navbar
+    height: auto
+    min-height: 60px
+    padding: 10px 15px
+    gap: 8px 20px
+    flex-wrap: wrap
+
+    a
+      font-size: 13px
+
 html
   scroll-behavior: smooth
