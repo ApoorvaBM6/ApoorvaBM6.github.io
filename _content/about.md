@@ -3,11 +3,11 @@ title: About
 ---
 
 
-I am an analytical engineer currently pursuing a **Master of Science in Aerospace Engineering (Embedded Systems)** at **ISAE-SUPAERO**.
+I am an analytical engineer with a Master of Science in Aerospace Engineering (Embedded Systems) from ISAE-SUPAERO.
 
-My work bridges the gap between **embedded systems** and **human factors**, with a specific focus on designing **neuroadaptive systems** that enhance **operator safety** and **performance in extreme environments**.
+With a strong foundation in software engineering, embedded systems, and real-time applications, I bring nearly three years of industrial experience as a Software Firmware Engineer at Hewlett Packard, where I developed and integrated Control Panel features across 40+ enterprise printer products. My experience includes requirements analysis, software implementation, debugging, system integration, and resolving complex technical issues.
 
-With **three years of experience** as a Software/Firmware Engineer at **Hewlett Packard**, where I developed **UI and firmware** for over **40 enterprise products**, I transitioned into research, developing **real-time blink detection algorithms** using **EEG data**.
+Building on this industrial background, I transitioned into research, developing real-time signal processing and blink detection algorithms using EEG data, gaining experience in data acquisition, algorithm development, and experimental validation.
 
-I am passionate about **human-centered research** and am actively seeking **Research Engineer** or **Research Assistant** positions.
+I am interested in engineering roles involving software development, embedded systems, real-time applications, and system integration, where I can contribute to building reliable, robust, and human-centered engineering solutions.
 
