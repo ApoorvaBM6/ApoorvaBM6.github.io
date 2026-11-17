@@ -1,43 +1,50 @@
-<!-- <header>
-    <a href="{{ site.url }}"><h1><span>{{ site.title }}</span></h1></a>
+<header id="top" class="hero">
 
-    <div class="social-links">
-      <a href="https://github.com/ApoorvaBM6" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/apoorva-bm" target="_blank">LinkedIn</a>
-      <a href="mailto:bmapoorva.nr@gmail.com">Email</a>
+    <div class="hero-name">
+        <div class="eyebrow">Aerospace · Embedded Software · Real-Time Systems</div>
+        <h1>Apoorva<small class="surname">Busunur Mallikarjuna</small></h1>
     </div>
 
-    <nav>
-        <a href="{{ site.url }}/#about">About</a>
-        <a href="{{ site.url }}#research">Research</a>
-        <a href="{{ site.url }}#contact">Contact</a>
-    </nav>
+    <div class="hero-media">
+        <img class="hero-img"
+             src="{{ '/assets/img/cockpit_experiment.jpg' | relative_url }}"
+             alt="Apoorva flying the ISAE-SUPAERO research flight simulator">
+        <div class="photo-tag"><i></i>Flight Simulator · ISAE-SUPAERO</div>
+    </div>
 
-</header> -->
+    <div class="hero-copy">
+        <p class="tagline">Design for <em>variability</em>.<br>Build for <em>determinism</em>.</p>
 
-<header>
+        <div class="typed" aria-live="polite"><span class="pre">&gt; </span><span id="typed">Embedded software engineer</span><span class="caret"></span></div>
 
-    <div class="hero">
+        <ul class="stats">
+            <li><b>M.Sc. Aerospace Engineering</b><small>ISAE-SUPAERO · Toulouse</small></li>
+            <li><b>3 yrs Software / Firmware Engineer</b><small>Hewlett Packard · Bangalore</small></li>
+        </ul>
 
-        <div class="hero-overlay">
-            <h1>Apoorva Busunur Mallikarjuna</h1>
+        <div class="ctas">
+            <button class="btn btn-primary" id="cvBtn" type="button" aria-expanded="false" aria-haspopup="true">Download CV ▾</button>
+            <a class="btn btn-ghost" href="#projects">View projects</a>
 
-            <p>
-                Embedded Systems • Human-Computer Interaction • Neuroergonomics and Human Factors 
-            </p>
-
+            <div class="cv-menu" id="cvMenu" role="menu">
+                <a role="menuitem" target="_blank" rel="noopener noreferrer" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_en.pdf' | relative_url }}">CV <span>English</span></a>
+                <a role="menuitem" target="_blank" rel="noopener noreferrer" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_fr.pdf' | relative_url }}">CV <span>Français</span></a>
+                <a role="menuitem" target="_blank" rel="noopener noreferrer" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_en.pdf' | relative_url }}">Résumé <span>English</span></a>
+                <a role="menuitem" target="_blank" rel="noopener noreferrer" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_fr.pdf' | relative_url }}">Résumé <span>Français</span></a>
+            </div>
         </div>
-
     </div>
 
-    <nav class="navbar">
-
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#engagement">Engagement</a>
-        <a href="#publications">Publications</a>
-        <a href="#references">References</a>
-    </nav>
+    <div class="sched-wrap"><canvas id="sched" aria-hidden="true"></canvas></div>
 
 </header>
+
+<!-- Section navigation (kept from the current site until the lower sections are redesigned) -->
+<nav class="navbar">
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#engagement">Engagement</a>
+    <a href="#publications">Publications</a>
+    <a href="#references">References</a>
+</nav>
