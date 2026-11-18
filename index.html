@@ -1,48 +1,210 @@
 ---
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>{{ site.title }}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" type="image/jpg" href={{ site.favicon }}>
-  <link rel="stylesheet" href="/assets/css/main.css" />
+  <title>{{ site.title }}</title>
+  <meta name="description" content="Apoorva Busunur Mallikarjuna — aerospace and embedded software engineer. Design for variability. Build for determinism.">
+  <link rel="icon" type="image/jpg" href="{{ site.favicon | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
 </head>
 <body>
 
-{% include header.html %}
+<nav class="alti dark" id="alti" aria-label="Sections">
+  <a href="#top" data-s="top">Home</a>
+  <a href="#overview" data-s="overview">Overview</a>
+  <a href="#journey" data-s="journey">Journey</a>
+  <a href="#projects" data-s="projects">Projects</a>
+  <a href="#engagement" data-s="engagement">Engagement</a>
+  <a href="#contact" data-s="contact">Contact</a>
+</nav>
+<nav class="topbar" id="topbar" aria-label="Sections (mobile)">
+  <a href="#overview" data-s="overview">Overview</a>
+  <a href="#journey" data-s="journey">Journey</a>
+  <a href="#projects" data-s="projects">Projects</a>
+  <a href="#engagement" data-s="engagement">Engagement</a>
+  <a href="#contact" data-s="contact">Contact</a>
+</nav>
 
+<!-- ================= HERO ================= -->
+<header id="top" class="hero" data-dark>
+  <div class="hero-name">
+    <div class="eyebrow">Aerospace · Embedded Software · Real-Time Systems</div>
+    <h1>Apoorva<small class="surname">Busunur Mallikarjuna</small></h1>
+  </div>
+  <div class="hero-media">
+    <img class="hero-img" id="heroImg" src="{{ '/assets/img/cockpit_experiment.jpg' | relative_url }}" alt="Apoorva flying the ISAE-SUPAERO research flight simulator">
+    <div class="photo-tag"><i></i>Flight Simulator · ISAE-SUPAERO</div>
+  </div>
+  <div class="hero-copy">
+      <p class="tagline">Design for <em>variability</em>.<br>Build for <em>determinism</em>.</p>
+      <div class="typed" aria-live="polite"><span class="pre">&gt; </span><span id="typed"></span><span class="caret"></span></div>
+      <ul class="stats">
+        <li><b>M.Sc. Aerospace Engineering</b><small>ISAE-SUPAERO · Toulouse</small></li>
+        <li><b><span data-count="3">0</span> yrs Software / Firmware Engineer</b><small>Hewlett Packard · Bangalore</small></li>
+      </ul>
+      <div class="ctas">
+        <button class="btn btn-primary" id="cvBtn" aria-expanded="false" aria-haspopup="true">Download CV ▾</button>
+        <a class="btn btn-ghost" href="#projects">View projects</a>
+        <div class="cv-menu" id="cvMenu" role="menu">
+          <a role="menuitem" target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_en.pdf' | relative_url }}">CV <span>English</span></a>
+          <a role="menuitem" target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_fr.pdf' | relative_url }}">CV <span>Français</span></a>
+          <a role="menuitem" target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_en.pdf' | relative_url }}">Résumé <span>English</span></a>
+          <a role="menuitem" target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_fr.pdf' | relative_url }}">Résumé <span>Français</span></a>
+        </div>
+      </div>
+  </div>
+  <div class="sched-wrap"><canvas id="sched" aria-hidden="true"></canvas></div>
+</header>
 
-{% assign about = site.content | where:"title","About" | first %}
-{% include about.html %}
+<!-- ================= BENTO OVERVIEW ================= -->
+<section id="overview" class="block" aria-label="Overview">
+  <div class="wrap">
+    <div class="bento">
+      <article class="tile t-about clickable reveal" data-modal="about" tabindex="0">
+        <span class="more">＋</span>
+        <div class="eyebrow">About</div>
+        <h3>Engineer turning real-time systems into human-centred ones.</h3>
+        <p>M.Sc. in Aerospace Engineering (Embedded Systems) from ISAE-SUPAERO, with nearly three years as a Software/Firmware Engineer at HP and research in real-time EEG signal processing.</p>
+        <div class="stack"><div class="eyebrow">Core stack</div><span class="chip">C</span><span class="chip">Python</span><span class="chip">RTOS / RTEMS</span><span class="chip">VHDL</span><span class="chip">ROS 2</span><span class="chip">EEG / ECG</span><span class="chip">JavaScript</span>
+        <br><span class="read">Read full bio →</span></div>
+      </article>
+      <article class="tile t-seek reveal">
+        <div class="eyebrow">Looking for</div>
+        <h3>Engineering roles where reliability meets people</h3>
+        <div class="chips"><span class="chip">Software development</span><span class="chip">Embedded systems</span><span class="chip">Real-time applications</span><span class="chip">System integration</span></div>
+      </article>
+      <article class="tile t-docs reveal">
+        <div class="eyebrow">Documents</div>
+        <div class="doc-row">CV <span><a target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_en.pdf' | relative_url }}">EN</a><a target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_CV_fr.pdf' | relative_url }}">FR</a></span></div>
+        <div class="doc-row">Résumé <span><a target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_en.pdf' | relative_url }}">EN</a><a target="_blank" rel="noopener" href="{{ '/assets/files/Apoorva_Busunur_Mallikarjuna_Resume_fr.pdf' | relative_url }}">FR</a></span></div>
+      </article>
+      <article class="tile t-connect reveal">
+        <div><div class="eyebrow">Connect</div><h3>Let's talk</h3><p>Toulouse, France</p></div>
+        <div class="socials" data-socials></div>
+      </article>
+      <article class="tile t-focus clickable reveal" data-jump="projects" tabindex="0" style="grid-column:1 / -1">
+        <span class="more">＋</span>
+        <div class="eyebrow">Focus areas</div>
+        <h3>Where the projects cluster</h3>
+        <div id="focusBars" style="margin-top:12px"></div>
+      </article>
+    </div>
+  </div>
+</section>
 
-<!--{% assign about = site.content | where:"title","About" | first %}
-{% include section.html id="about" content=about.content %} -->
+<!-- ================= JOURNEY ================= -->
+<section id="journey" class="block j-block" data-dark>
+  <div class="wrap">
+    <div class="j-head reveal">
+      <h2>Journey</h2>
+      <p>Education &amp; experience · today → 2016</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+</section>
 
+<!-- ================= PROJECTS ================= -->
+<section id="projects" class="block" aria-label="Projects">
+  <div class="wrap">
+    <h2 class="p-head reveal">Projects</h2>
+    <div class="filters reveal" id="filters">
+      <span class="uni-pill" id="uniPill"><span id="uniName"></span><button aria-label="Clear institution filter" id="uniClear">×</button></span>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
 
-{% assign education = site.content | where:"title","Education" | first %}
-{% include section.html id="education" content=education.content %}
+<!-- ================= ENGAGEMENT ================= -->
+<section id="engagement" class="block e-block" data-dark>
+  <div class="wrap">
+    <h2 class="e-head reveal">Scientific Engagement, Hackathons &amp; Leadership</h2>
+    <div class="eng-tabs" role="tablist" aria-label="Engagement categories"><button role="tab" id="etab-conf" aria-controls="epan-conf" aria-selected="true" class="on">Conferences<span>4</span></button><button role="tab" id="etab-hack" aria-controls="epan-hack" aria-selected="false" class="">Hackathons<span>2</span></button><button role="tab" id="etab-lead" aria-controls="epan-lead" aria-selected="false" class="">Leadership<span>3</span></button><button role="tab" id="etab-pubs" aria-controls="epan-pubs" aria-selected="false" class="">Publications<span>2</span></button></div>
+    <div class="eng">
+      <article class="eng-panel reveal on" role="tabpanel" id="epan-conf" aria-labelledby="etab-conf">
+        <header><span class="eng-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="11" rx="3"/><path d="M5 10a7 7 0 0 0 14 0M12 17v5M8 22h8"/></svg></span><h3>Conferences</h3><span class="eng-n">04</span></header>
+        <ul><li class="eng-item"><span class="role">Volunteer &amp; attendee</span><a class="eng-link" href="https://events.isae-supaero.fr/event/42/" target="_blank" rel="noopener"><b>ICCAS 2026</b><span class="ext" aria-hidden="true">↗</span></a><span class="desc">International Conference on Cognitive Aircraft Systems</span><span class="meta">Toulouse, France · Jun 2026</span></li><li class="eng-item"><span class="role">Volunteer &amp; attendee</span><a class="eng-link" href="https://www.isae-supaero.fr/en/events/interdisciplinary-congress-on-extreme-worlds-cime" target="_blank" rel="noopener"><b>CIME 2025</b><span class="ext" aria-hidden="true">↗</span></a><span class="desc">Interdisciplinary Congress on Extreme Worlds</span><span class="meta">Toulouse, France · Oct 2025</span></li><li class="eng-item"><span class="role">Presenter</span><a class="eng-link" href="https://2024.imavs.org/" target="_blank" rel="noopener"><b>IMAV 2024</b><span class="ext" aria-hidden="true">↗</span></a><span class="desc">International Micro Air Vehicle Conference and Competition</span><span class="meta">Bristol, UK · Sep 2024</span><span class="note">Presented a colleague’s paper on PID control of line-following multicopters</span></li><li class="eng-item"><span class="role">Attendee</span><a class="eng-link" href="https://events.isae-supaero.fr/event/32/" target="_blank" rel="noopener"><b>ICCAS 2024</b><span class="ext" aria-hidden="true">↗</span></a><span class="desc">International Conference on Cognitive Aircraft Systems</span><span class="meta">Toulouse, France · May 2024</span></li></ul>
+      </article>
+      <article class="eng-panel reveal" role="tabpanel" id="epan-hack" aria-labelledby="etab-hack">
+        <header><span class="eng-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg></span><h3>Hackathons</h3><span class="eng-n">02</span></header>
+        <ul><li class="eng-item"><span class="role">Participant</span><b>BR41N.IO BCI Hackathon 2026</b><span class="desc">24-hour neurotechnology hackathon — stroke-rehab EEG: CAR preprocessing &amp; CSP feature ranking</span></li><li class="eng-item"><span class="role">Participant</span><b>Boeing National Aeromodelling 2017</b><span class="desc">IIT Kharagpur — fixed-wing aircraft model with gliding and object-dropping mechanisms</span></li></ul>
+      </article>
+      <article class="eng-panel reveal" role="tabpanel" id="epan-lead" aria-labelledby="etab-lead">
+        <header><span class="eng-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></svg></span><h3>Leadership</h3><span class="eng-n">03</span></header>
+        <ul><li class="eng-item"><span class="role">Student Representative</span><b>Embedded Systems cohort, ISAE-SUPAERO</b><span class="desc">2024 – 2025</span></li><li class="eng-item"><span class="role">Student Chairperson</span><b>UCSP — Ubiquitous Computing &amp; Signal Processing, NIE Mysuru</b><span class="desc">2019 – 2020 · led a student research initiative: projects, workshops, internships</span></li><li class="eng-item"><span class="role">Student Representative</span><b>ECE Association, NIE Mysuru</b><span class="desc">2017</span></li></ul>
+      </article>
+      <article class="eng-panel reveal" role="tabpanel" id="epan-pubs" aria-labelledby="etab-pubs">
+        <header><span class="eng-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span><h3>Publications</h3><span class="eng-n">02</span></header>
+        <ul><li class="eng-item pub-item">
+            <button class="pub-toggle" aria-expanded="false" aria-controls="pubd-1"><span class="role">2024 · IMAV</span><b>On the Lateral Non-Stabilizability of PID Controllers for Vision-Based Line-Following Multicopters through Roll Angle Setpoints</b><span class="plus" aria-hidden="true">＋</span><span class="sr-only">Show details</span></button>
+            <div class="pub-more" id="pubd-1"><div>
+              <p class="au">P. Van Holm, <b>A. B. Mallikarjuna</b>, C. Simon Soria, L. R. Lustosa</p>
+              <p class="venue">15th Annual International Micro Air Vehicle Conference and Competition (IMAV 2024)</p>
+              <dl class="pub-meta"><div><dt>Location</dt><dd>Bristol, United Kingdom · 16–20 Sep 2024</dd></div><div><dt>Paper</dt><dd>IMAV2024-33 · pp. 277–284</dd></div><div><dt>Affiliation</dt><dd>ISAE-SUPAERO, Université de Toulouse</dd></div></dl>
+              <a class="pub-link" href="https://www.imavs.org/pdf/imav.2024.33" target="_blank" rel="noopener">Read paper ↗</a>
+            </div></div>
+          </li><li class="eng-item pub-item">
+            <button class="pub-toggle" aria-expanded="false" aria-controls="pubd-2"><span class="role">2021 · Springer</span><b>Pseudonymization of Text and Image Data to Provide Confidentiality</b><span class="plus" aria-hidden="true">＋</span><span class="sr-only">Show details</span></button>
+            <div class="pub-more" id="pubd-2"><div>
+              <p class="au">C. S. Manthan, K. Roopa, H. S. Bindu, <b>B. M. Apoorva</b>, Mala D. Madar</p>
+              <p class="venue">Proceedings of International Conference on Computational Intelligence, Data Science and Cloud Computing</p>
+              <dl class="pub-meta"><div><dt>Series</dt><dd>Lecture Notes on Data Engineering and Communications Technologies, vol. 62</dd></div><div><dt>Publisher</dt><dd>Springer, Singapore · pp. 553–564 · first online 6 Apr 2021</dd></div><div><dt>DOI</dt><dd>10.1007/978-981-33-4968-1_43</dd></div></dl>
+              <a class="pub-link" href="https://doi.org/10.1007/978-981-33-4968-1_43" target="_blank" rel="noopener">View on Springer ↗</a>
+            </div></div>
+          </li></ul>
+      </article>
+    </div>
+  </div>
+</section>
 
-{% assign experience = site.content | where:"title","Experience" | first %}
-{% include section.html id="experience" content=experience.content %}
+<!-- ================= PUBLICATIONS ================= -->
 
-{% assign projects = site.content | where:"title","Projects" | first %}
-{% include projects.html %}
+<!-- ================= CONTACT ================= -->
+<section id="contact" data-dark>
+  <div class="wrap">
+    <h2 class="reveal">Let's build something<br>reliable and human-centred.</h2>
+    <p class="lead reveal">Open to engineering roles in software, embedded and real-time systems, and system integration.</p>
+    <div class="ctas reveal"><div class="socials socials-lg" data-socials style="margin:0"></div></div>
+    <div class="refs">
+      <div class="ref reveal"><div class="eyebrow">Reference</div><b>Dr. Vsevolod Peysakhovich</b><span>Associate Professor, Centre of Neuroergonomics and Human Factors, DCAS, ISAE-SUPAERO</span><br><a href="https://pagespro.isae-supaero.fr/vsevolod-peysakhovich?lang=en" target="_blank" rel="noopener">Profile →</a></div>
+      <div class="ref reveal"><div class="eyebrow">Reference</div><b>Dr. Michael Lauer</b><span>Head of the Embedded Systems Major, Master of Aerospace Engineering, ISAE-SUPAERO</span><br><a href="https://pagespro.isae-supaero.fr/michael-lauer/?lang=en" target="_blank" rel="noopener">Profile →</a></div>
+    </div>
+    <footer><span>© 2026 Apoorva Busunur Mallikarjuna</span></footer>
+  </div>
+</section>
 
-{% assign engagement = site.content | where:"title","Scientific Engagement and Hackathons" | first %}
-{% include section.html id="engagement" content=engagement.content %}
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle"></aside>
+<div class="modal" id="modal" role="dialog" aria-modal="true"></div>
 
-{% include publications.html %}
-
-{% assign references = site.content | where:"title","References" | first %}
-{% include section.html id="references" content=references.content %}
-
-{% include footer.html %}
-
-<script src="/assets/js/jquery-2.1.1.min.js"></script>
-<script src="/assets/js/functions.js" type="text/javascript"></script>
-<script src="/assets/js/hero.js"></script>
+{%- assign about = site.content | where: "title", "About" | first -%}
+{%- assign ordered_projects = site.projects | sort: "order" | reverse -%}
+<script>
+  window.SITE_DATA = {
+    "about": {{ about.content | markdownify | jsonify }},
+    "projects": [
+    {%- for p in ordered_projects %}
+      {
+        "title": {{ p.title | jsonify }},
+        "period": {{ p.period | jsonify }},
+        "tag": {{ p.tag | jsonify }},
+        "university": {{ p.university | jsonify }},
+        "category": {{ p.category | jsonify }},
+        "skills": {{ p.skills | jsonify }},
+        "contributors": {{ p.contributors | jsonify }},
+        "github": {{ p.github | jsonify }},
+        "report": {{ p.report | jsonify }},
+        "presentation": {{ p.presentation | jsonify }},
+        "links": {{ p.links | jsonify }},
+        "summary": {{ p.content | markdownify | split: "</p>" | first | strip_html | strip | jsonify }},
+        "body": {{ p.content | markdownify | jsonify }}
+      }{% unless forloop.last %},{% endunless %}
+    {%- endfor %}
+    ]
+  };
+</script>
+<script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>
