@@ -12,7 +12,7 @@ const DATA = window.SITE_DATA;
     university: p.university || '',
     category: arr(p.category),
     skills: arr(p.skills),
-    contributors: arr(p.contributors).map(c => typeof c === 'string' ? c : c.name).filter(Boolean),
+    contributors: arr(p.contributors).map(c => typeof c === 'string' ? { name: c } : { name: c.name, linkedin: c.linkedin }).filter(c => c.name),
     links: [
       ...(p.github ? [{ label: 'GitHub', url: p.github }] : []),
       ...(p.report ? [{ label: 'Report', url: p.report }] : []),
@@ -252,7 +252,7 @@ function openProject(id){
   drawer.innerHTML = `<div class="drawer-head"><button class="x" data-close aria-label="Close">×</button><div class="eyebrow">${esc(p.tag)}${p.category.length?' · '+p.category.map(esc).join(' · '):''}</div><h3 id="dTitle">${esc(p.title)}</h3><div class="sub">${esc(p.period)}${p.university?' · '+esc(p.university):''}</div></div>
   <div class="drawer-body">${p.body}
   ${p.skills.length?`<h4>Skills &amp; tools</h4><div class="skills">${p.skills.map(s=>`<span class="chip">${esc(s)}</span>`).join('')}</div>`:''}
-  ${p.contributors.length?`<h4>With</h4><p style="margin:0;font-size:14px;color:var(--muted)">${p.contributors.map(esc).join(', ')}</p>`:''}
+  ${p.contributors.length?`<h4>Collaborators</h4><div class="collab">${p.contributors.map(c => c.linkedin ? `<a href="${esc(c.linkedin)}" target="_blank" rel="noopener" title="${esc(c.name)} on LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2zM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2zM7.1 20.5H3.5V9h3.6v11.5zM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0z"/></svg>${esc(c.name)}</a>` : `<span>${esc(c.name)}</span>`).join('')}</div>`:''}
   ${p.links.length?`<h4>Links</h4><div class="links">${p.links.map(l=>`<a href="${l.url}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join('')}</div>`:''}</div>`;
   drawer.classList.add('on'); scrim.classList.add('on'); document.body.style.overflow = 'hidden'; $('.x', drawer).focus();
 }

@@ -220,6 +220,11 @@ section.block{padding:96px 0}
 .drawer-body h4{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:26px 0 10px}
 .drawer-body .skills{display:flex;flex-wrap:wrap;gap:6px}
 .drawer-body .links{display:flex;flex-wrap:wrap;gap:10px}
+.collab{display:flex;flex-wrap:wrap;gap:8px}
+.collab a,.collab span{display:inline-flex;align-items:center;gap:7px;padding:7px 12px;border-radius:999px;font-size:13.5px;border:1px solid rgba(0,29,59,.15);color:var(--navy);text-decoration:none}
+.collab a svg{width:14px;height:14px;color:#0a66c2}
+.collab a:hover{border-color:var(--cyan);background:rgba(0,184,217,.08)}
+.collab span{color:var(--muted)}
 .drawer-body .links a{display:inline-flex;align-items:center;gap:6px;padding:9px 16px;border-radius:999px;background:var(--navy);color:var(--white);text-decoration:none;font-size:13.5px;font-weight:600}
 .drawer-body .links a:hover{background:var(--cyan);color:var(--navy)}
 .x{position:absolute;right:20px;top:20px;width:36px;height:36px;border-radius:50%;border:1px solid rgba(248,250,252,.3);background:transparent;color:var(--white);font-size:18px;cursor:pointer}
