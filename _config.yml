@@ -8,6 +8,14 @@ permalink: pretty
 
 favicon: "/assets/img/cockpit_experiment.jpg"
 
+# Privacy-friendly analytics (Umami Cloud). The Website ID is public, not a secret:
+# copy it from Umami Cloud → Settings → Websites → Edit → Website ID.
+# Leave it empty to disable tracking. The tracker only loads in production builds.
+analytics:
+  umami_website_id: "d2b5a936-fa09-4d9f-83ed-2fc6a7c610df"
+  umami_script: "https://cloud.umami.is/script.js"
+  domains: "apoorvabm6.github.io"
+
 port: 3000
 url: http://localhost:3000
 

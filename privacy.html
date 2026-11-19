@@ -1,0 +1,93 @@
+---
+permalink: /privacy/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy · {{ site.title }}</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/jpg" href="{{ site.favicon | relative_url }}">
+  <style>
+    :root{--navy:#001d3b;--cyan:#00B8D9;--text:#1F2937;--muted:#5b6676;--bg:#F8FAFC}
+    body{margin:0;font-family:"Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--text);background:var(--bg);line-height:1.65}
+    main{max-width:720px;margin:0 auto;padding:56px 24px 80px}
+    h1,h2{color:var(--navy);line-height:1.25}
+    h1{font-size:30px;margin:6px 0 24px} h2{font-size:19px;margin:36px 0 8px}
+    .eyebrow{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan)}
+    a{color:var(--navy)} .muted{color:var(--muted);font-size:14px}
+    ul{padding-left:20px}
+    .optout{margin-top:14px;padding:16px 18px;border:1px solid rgba(0,29,59,.15);border-radius:12px;background:#fff}
+    button{font:inherit;font-weight:600;padding:9px 16px;border-radius:999px;border:1px solid var(--navy);background:transparent;color:var(--navy);cursor:pointer;margin:4px 6px 0 0}
+    button[aria-pressed="true"]{background:var(--navy);color:#fff}
+    code{font-size:13px;background:rgba(0,29,59,.06);padding:1px 5px;border-radius:4px}
+    hr{border:0;border-top:1px solid rgba(0,29,59,.12);margin:44px 0}
+  </style>
+</head>
+<body>
+<main>
+  <a class="eyebrow" href="{{ '/' | relative_url }}" style="text-decoration:none">← {{ site.title }}</a>
+  <h1>Privacy notice</h1>
+
+  <p>With your consent, this website uses <b>Umami Analytics</b> (hosted by Umami Software in the EU) to produce aggregate visitor statistics: how many people visit, which sections and projects they look at, how they found the site, and whether documents such as the CV are downloaded. <b>Nothing is measured unless you click “Accept”</b> in the banner shown on your first visit.</p>
+
+  <h2>What is collected</h2>
+  <ul>
+    <li>Pages and sections viewed, approximate time spent, and clicks on links and buttons of this site (for example “CV downloaded — English”).</li>
+    <li>The referring website (for example LinkedIn or Google), campaign tags in the link, browser, operating system, device type, screen size and language.</li>
+    <li>Country, region and city, derived from your IP address at the moment of the visit. <b>Your IP address is not stored.</b></li>
+  </ul>
+
+  <h2>What is not collected</h2>
+  <ul>
+    <li>No analytics cookies. The only item stored on your device is your consent choice itself (see below).</li>
+    <li>No names, e-mail addresses, form contents or other personal identifiers; no device fingerprinting; no tracking across other websites.</li>
+    <li>No advertising, profiling or sale of data. Statistics are only viewed by the site owner, in aggregate form.</li>
+  </ul>
+
+  <h2>Purpose, legal basis and retention</h2>
+  <p>The sole purpose is to measure the audience of this personal portfolio. Statistics are only collected on the basis of your <b>consent</b> (Art. 6(1)(a) GDPR, art. 82 of the French Data Protection Act), which you can withdraw at any time — as easily as you gave it — using the buttons below. Statistics are kept for at most 6 months by the analytics provider.</p>
+  <p>Do Not Track and Global Privacy Control signals are treated as a refusal: if your browser sends either, you will not be asked and no statistics are recorded.</p>
+
+  <h2>Your consent choice</h2>
+  <p class="muted">Your answer is stored in your browser (local storage key <code>analytics-consent</code>) for 6 months so that you are not asked on every visit; after that you are asked again. This storage is strictly necessary to remember your choice.</p>
+  <div class="optout">
+    <p id="optStatus" class="muted" style="margin-top:0">Checking…</p>
+    <button type="button" id="acceptBtn">Accept statistics</button>
+    <button type="button" id="declineBtn" class="secondary">Decline statistics</button>
+  </div>
+
+  <h2>Your rights and contact</h2>
+  <p>You can ask questions or exercise your rights (access, objection, erasure) by writing to <a href="mailto:bmapoorva.nr@gmail.com">bmapoorva.nr@gmail.com</a>. You may also lodge a complaint with the CNIL (<a href="https://www.cnil.fr" rel="noopener">cnil.fr</a>).</p>
+
+  <hr>
+
+  <h2 lang="fr">Résumé en français</h2>
+  <p lang="fr">Avec votre consentement uniquement, ce site utilise Umami Analytics (hébergé dans l’UE) pour une mesure d’audience anonyme et agrégée : sections consultées, provenance des visites, téléchargements du CV. Rien n’est mesuré tant que vous n’avez pas cliqué sur « Accept ». Aucun cookie de mesure n’est déposé ; seul votre choix est conservé dans votre navigateur pendant 6 mois. L’adresse IP n’est pas conservée et aucune donnée n’est réutilisée à d’autres fins. Les signaux « Do Not Track » et « Global Privacy Control » valent refus. Vous pouvez retirer votre consentement à tout moment grâce aux boutons ci-dessus. Durée de conservation : 6 mois maximum. Contact : <a href="mailto:bmapoorva.nr@gmail.com">bmapoorva.nr@gmail.com</a>.</p>
+
+  <p class="muted">Last updated: November 2026</p>
+</main>
+<script>
+(function () {
+  var KEY = 'analytics-consent', MAX_AGE = 182 * 864e5;
+  var status = document.getElementById('optStatus'), acc = document.getElementById('acceptBtn'), dec = document.getElementById('declineBtn');
+  var signal = false; try { signal = navigator.globalPrivacyControl === true || navigator.doNotTrack === '1'; } catch (e) {}
+  function get() {
+    try { var c = JSON.parse(localStorage.getItem(KEY) || 'null'); return c && Date.now() - c.t < MAX_AGE ? c.v : null; } catch (e) { return undefined; }
+  }
+  function render() {
+    var v = get();
+    if (v === undefined) { status.textContent = 'Your browser blocks local storage, so no choice can be saved and no statistics are recorded.'; acc.hidden = dec.hidden = true; return; }
+    if (signal) { status.textContent = 'Your browser sends a Do Not Track / Global Privacy Control signal, so no statistics are recorded from this browser.'; acc.hidden = dec.hidden = true; return; }
+    status.textContent = v === 'granted' ? 'You have accepted anonymous statistics on this browser.' : v === 'denied' ? 'You have declined statistics: nothing is recorded from this browser.' : 'You have not made a choice yet: nothing is recorded until you accept.';
+    acc.setAttribute('aria-pressed', v === 'granted'); dec.setAttribute('aria-pressed', v === 'denied');
+  }
+  function set(v) { try { localStorage.setItem(KEY, JSON.stringify({ v: v, t: Date.now() })); } catch (e) {} render(); }
+  acc.addEventListener('click', function () { set('granted'); });
+  dec.addEventListener('click', function () { set('denied'); });
+  render();
+})();
+</script>
+</body>
+</html>

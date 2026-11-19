@@ -1,0 +1,16 @@
+/* Analytics consent banner — matches the portfolio palette (navy / cyan). */
+.consent{position:fixed;right:24px;bottom:24px;z-index:9999;width:min(380px,calc(100% - 32px));padding:18px 20px;border-radius:14px;
+  background:#001d3b;color:#F8FAFC;border:1px solid rgba(0,184,217,.35);box-shadow:0 12px 40px rgba(0,0,0,.35);
+  font:14px/1.55 "Open Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.consent[hidden]{display:none}
+.consent h2{margin:0 0 6px;font-size:15px;font-weight:700;color:#F8FAFC}
+.consent p{margin:0 0 6px;color:rgba(248,250,252,.82)}
+.consent p.fr{font-size:12.5px;color:rgba(248,250,252,.6)}
+.consent a{color:#00B8D9}
+.consent .row{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+/* Both choices are equally prominent and equally easy (CNIL guidance). */
+.consent button{flex:1 1 140px;font:inherit;font-weight:600;padding:10px 16px;border-radius:999px;cursor:pointer;border:1px solid #00B8D9;background:transparent;color:#F8FAFC}
+.consent button:hover{background:rgba(0,184,217,.15)}
+.consent button:focus-visible{outline:2px solid #4FD1C5;outline-offset:2px}
+@media (prefers-reduced-motion:no-preference){.consent{animation:consent-in .25s ease-out}@keyframes consent-in{from{opacity:0;transform:translateY(8px)}}}
+@media (max-width:640px){.consent{right:12px;left:12px;bottom:12px;width:auto;padding:14px 16px;font-size:13px}.consent h2{font-size:14px}.consent .row{margin-top:8px}.consent button{padding:9px 12px}}
